@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0018)http://alaukik.in/ -->
+<html lang="en">
+<!-- Mirrored from code-cafe.com/envato/crafty/light/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Mar 2015 11:30:59 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- BOOTSTRAP -->
+    <link href="./content/bootstrap.min.css" rel="stylesheet">
+    <link href="./content/style2.css" rel="stylesheet">
+    <link href="./content/style.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        function MM_validateForm() { //v4.0
+            if (document.getElementById){
+                var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+                for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+                    if (val) { nm=val.name; if ((val=val.value)!="") {
+                        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+                            if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+                        } else if (test!='R') { num = parseFloat(val);
+                            if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+                            if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+                                min=test.substring(8,p); max=test.substring(p+1);
+                                if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+                            } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+                } if (errors) alert('The following error(s) occurred:\n'+errors);
+                document.MM_returnValue = (errors == '');
+            } }
+    </script>
+    <style type="text/css">
+        .dg ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            clear: both;
+        }
+
+        .dg.ac {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            z-index: 0;
+        }
+
+        .dg:not(.ac) .main {
+            overflow: hidden;
+        }
+
+        .dg.main {
+            -webkit-transition: opacity 0.1s linear;
+            -o-transition: opacity 0.1s linear;
+            -moz-transition: opacity 0.1s linear;
+            transition: opacity 0.1s linear;
+        }
+
+            .dg.main.taller-than-window {
+                overflow-y: auto;
+            }
+
+                .dg.main.taller-than-window .close-button {
+                    opacity: 1;
+                    margin-top: -1px;
+                    border-top: 1px solid #2c2c2c;
+                }
+
+            .dg.main ul.closed .close-button {
+                opacity: 1 !important;
+            }
+
+            .dg.main:hover .close-button, .dg.main .close-button.drag {
+                opacity: 1;
+            }
+
+            .dg.main .close-button {
+                -webkit-transition: opacity 0.1s linear;
+                -o-transition: opacity 0.1s linear;
+                -moz-transition: opacity 0.1s linear;
+                transition: opacity 0.1s linear;
+                border: 0;
+                position: absolute;
+                line-height: 19px;
+                height: 20px;
+                cursor: pointer;
+                text-align: center;
+                background-color: #000;
+            }
+
+                .dg.main .close-button:hover {
+                    background-color: #111;
+                }
+
+        .dg.a {
+            float: right;
+            margin-right: 15px;
+            overflow-x: hidden;
+        }
+
+            .dg.a.has-save ul {
+                margin-top: 27px;
+            }
+
+                .dg.a.has-save ul.closed {
+                    margin-top: 0;
+                }
+
+            .dg.a .save-row {
+                position: fixed;
+                top: 0;
+                z-index: 1002;
+            }
+
+        .dg li {
+            -webkit-transition: height 0.1s ease-out;
+            -o-transition: height 0.1s ease-out;
+            -moz-transition: height 0.1s ease-out;
+            transition: height 0.1s ease-out;
+        }
+
+            .dg li:not(.folder) {
+                cursor: auto;
+                height: 27px;
+                line-height: 27px;
+                overflow: hidden;
+                padding: 0 4px 0 5px;
+            }
+
+            .dg li.folder {
+                padding: 0;
+                border-left: 4px solid rgba(0,0,0,0);
+            }
+
+            .dg li.title {
+                cursor: pointer;
+                margin-left: -4px;
+            }
+
+        .dg .closed li:not(.title), .dg .closed ul li, .dg .closed ul li > * {
+            height: 0;
+            overflow: hidden;
+            border: 0;
+        }
+
+        .dg .cr {
+            clear: both;
+            padding-left: 3px;
+            height: 27px;
+        }
+
+        .dg .property-name {
+            cursor: default;
+            float: left;
+            clear: left;
+            width: 40%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .dg .c {
+            float: left;
+            width: 60%;
+        }
+
+            .dg .c input[type=text] {
+                border: 0;
+                margin-top: 4px;
+                padding: 3px;
+                width: 100%;
+                float: right;
+            }
+
+        .dg .has-slider input[type=text] {
+            width: 30%;
+            margin-left: 0;
+        }
+
+        .dg .slider {
+            float: left;
+            width: 66%;
+            margin-left: -5px;
+            margin-right: 0;
+            height: 19px;
+            margin-top: 4px;
+        }
+
+        .dg .slider-fg {
+            height: 100%;
+        }
+
+        .dg .c input[type=checkbox] {
+            margin-top: 9px;
+        }
+
+        .dg .c select {
+            margin-top: 5px;
+        }
+
+        .dg .cr.function, .dg .cr.function .property-name, .dg .cr.function *, .dg .cr.boolean, .dg .cr.boolean * {
+            cursor: pointer;
+        }
+
+        .dg .selector {
+            display: none;
+            position: absolute;
+            margin-left: -9px;
+            margin-top: 23px;
+            z-index: 10;
+        }
+
+            .dg .c:hover .selector, .dg .selector.drag {
+                display: block;
+            }
+
+        .dg li.save-row {
+            padding: 0;
+        }
+
+            .dg li.save-row .button {
+                display: inline-block;
+                padding: 0px 6px;
+            }
+
+        .dg.dialogue {
+            background-color: #222;
+            width: 460px;
+            padding: 15px;
+            font-size: 13px;
+            line-height: 15px;
+        }
+
+        #dg-new-constructor {
+            padding: 10px;
+            color: #222;
+            font-family: Monaco, monospace;
+            font-size: 10px;
+            border: 0;
+            resize: none;
+            box-shadow: inset 1px 1px 1px #888;
+            word-wrap: break-word;
+            margin: 12px 0;
+            display: block;
+            width: 440px;
+            overflow-y: scroll;
+            height: 100px;
+            position: relative;
+        }
+
+        #dg-local-explain {
+            display: none;
+            font-size: 11px;
+            line-height: 17px;
+            border-radius: 3px;
+            background-color: #333;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+            #dg-local-explain code {
+                font-size: 10px;
+            }
+
+        #dat-gui-save-locally {
+            display: none;
+        }
+
+        .dg {
+            color: #eee;
+            font: 11px 'Lucida Grande', sans-serif;
+            text-shadow: 0 -1px 0 #111;
+        }
+
+            .dg.main::-webkit-scrollbar {
+                width: 5px;
+                background: #1a1a1a;
+            }
+
+            .dg.main::-webkit-scrollbar-corner {
+                height: 0;
+                display: none;
+            }
+
+            .dg.main::-webkit-scrollbar-thumb {
+                border-radius: 5px;
+                background: #676767;
+            }
+
+            .dg li:not(.folder) {
+                background: #1a1a1a;
+                border-bottom: 1px solid #2c2c2c;
+            }
+
+            .dg li.save-row {
+                line-height: 25px;
+                background: #dad5cb;
+                border: 0;
+            }
+
+                .dg li.save-row select {
+                    margin-left: 5px;
+                    width: 108px;
+                }
+
+                .dg li.save-row .button {
+                    margin-left: 5px;
+                    margin-top: 1px;
+                    border-radius: 2px;
+                    font-size: 9px;
+                    line-height: 7px;
+                    padding: 4px 4px 5px 4px;
+                    background: #c5bdad;
+                    color: #fff;
+                    text-shadow: 0 1px 0 #b0a58f;
+                    box-shadow: 0 -1px 0 #b0a58f;
+                    cursor: pointer;
+                }
+
+                    .dg li.save-row .button.gears {
+                        background: #c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;
+                        height: 7px;
+                        width: 8px;
+                    }
+
+                    .dg li.save-row .button:hover {
+                        background-color: #bab19e;
+                        box-shadow: 0 -1px 0 #b0a58f;
+                    }
+
+            .dg li.folder {
+                border-bottom: 0;
+            }
+
+            .dg li.title {
+                padding-left: 16px;
+                background: #000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;
+                cursor: pointer;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+
+            .dg .closed li.title {
+                background-image: url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==);
+            }
+
+            .dg .cr.boolean {
+                border-left: 3px solid #806787;
+            }
+
+            .dg .cr.function {
+                border-left: 3px solid #e61d5f;
+            }
+
+            .dg .cr.number {
+                border-left: 3px solid #2fa1d6;
+            }
+
+                .dg .cr.number input[type=text] {
+                    color: #2fa1d6;
+                }
+
+            .dg .cr.string {
+                border-left: 3px solid #1ed36f;
+            }
+
+                .dg .cr.string input[type=text] {
+                    color: #1ed36f;
+                }
+
+            .dg .cr.function:hover, .dg .cr.boolean:hover {
+                background: #111;
+            }
+
+            .dg .c input[type=text] {
+                background: #303030;
+                outline: none;
+            }
+
+                .dg .c input[type=text]:hover {
+                    background: #3c3c3c;
+                }
+
+                .dg .c input[type=text]:focus {
+                    background: #494949;
+                    color: #fff;
+                }
+
+            .dg .c .slider {
+                background: #303030;
+                cursor: ew-resize;
+            }
+
+            .dg .c .slider-fg {
+                background: #2fa1d6;
+            }
+
+            .dg .c .slider:hover {
+                background: #3c3c3c;
+            }
+
+                .dg .c .slider:hover .slider-fg {
+                    background: #44abda;
+                }
+    </style>
+</head>
+<body>
+    <!-- =========================
+         START HEADER SECTION
+    ============================== -->
+    <header class="page home parallax home-parallax" id="HOME" data-type="parallax" data-animate-up="header-hide" data-animate-down="header-hide" style="background-position: 50% 0px;">
+        <div class="header_overlay">
+            <div class="slider" style="padding-top: 366px; padding-bottom: 366px;">
+                <div id="particle-slider">
+                    <div class="slides">
+                        <div id="first-slide" class="slide" data-src="data:image/png;base64,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"> </div>
+                    </div>
+                    <canvas class="draw" width="1423" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="./content/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--<script src="js/bootstrap.min.js"></script>-->
+    <!--<script src="js/waypoints.min.js"></script>-->
+    <!--<script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>-->
+    <!--<script src="bfassets/js/jquery.bootFolio.js"></script>-->
+    <!--  <script src="js/jquery.easing.min.js"></script>-->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js"></script>-->
+    <!--<script src="js/tweetie.js"></script>-->
+    <!-- <script src="js/smoothscroll.js"></script>-->
+    <!-- <script src="js/jquery.ajaxchimp.min.js"></script>-->
+    <script src="./content/jquery.parallax-1.1.3.js"></script>
+    <!--<script src="js/matchMedia.js"></script>-->
+    <script src="./content/script.js"></script>
+    <script src="./content/dat.gui.min.js"></script>
+    <script src="./content/index.js"></script>
+    <script src="./content/particleslider.js" type="text/javascript"></script>
+    <!-- Mirrored from code-cafe.com/envato/crafty/light/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Mar 2015 11:33:33 GMT -->
+    <div class="dg ac"><div class="dg main a" style="width: 245px;"><div style="width: 6px; margin-left: -3px; height: 0px; cursor: ew-resize; position: absolute;"></div><ul style="height: auto;"><li class="cr number has-slider"><div><span class="property-name">ptlGap</span><div class="c"><div><input type="text"></div><div class="slider" style="padding-top: 366px; padding-bottom: 366px;"><div class="slider-fg" style="width: 0%;"></div></div></div></div></li><li class="cr number has-slider"><div><span class="property-name">ptlSize</span><div class="c"><div><input type="text"></div><div class="slider" style="padding-top: 366px; padding-bottom: 366px;"><div class="slider-fg" style="width: 0%;"></div></div></div></div></li><li class="cr boolean"><div><span class="property-name">restless</span><div class="c"><input type="checkbox" checked="checked"></div></div></li><li class="cr string color" style="border-left-color: rgb(255, 255, 255);"><div><span class="property-name">color</span><div class="c"><input type="text" style="outline: none; text-align: center; color: rgb(0, 0, 0); border: 0px; font-weight: bold; text-shadow: rgba(255, 255, 255, 0.701961) 0px 1px 1px; background-color: rgb(255, 255, 255);"><div class="selector" style="width: 122px; height: 102px; padding: 3px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 3px; background-color: rgb(34, 34, 34);"><div class="field-knob" style="position: absolute; width: 12px; height: 12px; border: 2px solid rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.498039) 0px 1px 3px; border-radius: 12px; z-index: 1; margin-left: -7px; margin-top: -7px; background-color: rgb(255, 255, 255);"></div><div class="saturation-field" style="width: 100px; height: 100px; border: 1px solid rgb(85, 85, 85); margin-right: 3px; display: inline-block; cursor: pointer; background: -webkit-linear-gradient(left, rgb(255, 255, 255) 0%, rgb(255, 0, 0) 100%);"><div style="width: 100%; height: 100%; background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);"></div></div><div class="hue-field" style="width: 15px; height: 100px; display: inline-block; border: 1px solid rgb(85, 85, 85); cursor: ns-resize; background: -webkit-linear-gradient(top, rgb(255, 0, 0) 0%, rgb(255, 0, 255) 17%, rgb(0, 0, 255) 34%, rgb(0, 255, 255) 50%, rgb(0, 255, 0) 67%, rgb(255, 255, 0) 84%, rgb(255, 0, 0) 100%);"><div class="hue-knob" style="position: absolute; width: 15px; height: 2px; border-right-width: 4px; border-right-style: solid; border-right-color: rgb(255, 255, 255); z-index: 1; margin-top: 100px;"></div></div></div></div></div></li></ul><div class="close-button" style="width: 245px;">Close Controls</div></div></div>
+</body>
+</html>
